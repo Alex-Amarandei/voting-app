@@ -29,7 +29,7 @@ export function useVotingProgramCandidateAccount({ account }: { account: PublicK
 		mutationKey: ['voting', 'vote', { cluster }],
 		mutationFn: async (candidate: string) => {
 			const modifyComputeUnits = ComputeBudgetProgram.setComputeUnitLimit({
-				units: 50_000,
+				units: 20_000,
 			});
 
 			const recentPriorityFees = await connection.getRecentPrioritizationFees({
